@@ -1,8 +1,10 @@
 #intersection {
+  position: relative;
   background-color: lightgrey;
   border: 5px solid black;
   width: 500px;
   height: 500px;
+  overflow: hidden;
 }
 
 .flexrow {
@@ -21,6 +23,7 @@
   width: 50px;
   border-radius: 50%;
   margin: 20px;
+  z-index: 1;
 }
 
 .east-and-west-wrapper {
@@ -28,11 +31,13 @@
   margin: 50px 0px;
 }
 
-.east > .light, .west > .light{
+.east > .light,
+.west > .light {
   background-color: red;
-} 
+}
 
-.north > .light, .south > .light {
+.north > .light,
+.south > .light {
   background-color: green;
 }
 
@@ -62,17 +67,67 @@
   background-color: orange;
 }
 
+@keyframes car-drive-north {
+  from {
+    transform: translateY(100px) rotate(180deg);
+  }
+
+  to {
+    transform: translateY(-500px) rotate(180deg);
+  }
+}
+
+@keyframes car-drive-west {
+  from {
+    transform: translateX(100px) rotate(90deg);
+  }
+
+  to {
+    transform: translateX(-500px) rotate(90deg);
+  }
+}
+
+.car {
+  width: 50px;
+  height: 100px;
+
+  background-image: url("car.png");
+  background-repeat: no-repeat;
+  background-size: 50px 100px;
+
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: linear;
+}
+
+.car-northbound {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  animation-name: car-drive-north;
+}
+
+.car-westbound {
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+
+  animation-name: car-drive-west;
+}
+
 button {
-    font-size: larger;
-    font-weight: 900;
-    background-color: white;
-    padding: 5px;
-    margin-top: 5px;
-    border: 3px solid black;
-    border-radius: 20%;
+  font-size: larger;
+  font-weight: 900;
+  background-color: white;
+  padding: 5px;
+  margin-top: 5px;
+  border: 3px solid black;
+  border-radius: 20%;
 }
 
 button:hover {
-    background-color: brightyellow;
-    border: 3px dashed black;
+  background-color: brightyellow;
+  border: 3px dashed black;
 }

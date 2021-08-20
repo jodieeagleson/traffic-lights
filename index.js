@@ -23,6 +23,7 @@ var trafficLight = {
         var south = document.querySelector(".south");
         var east = document.querySelector(".east");
         var west = document.querySelector(".west");
+        var car = document.querySelector('.car');
         if (this.state === "north_south_go") {
             north === null || north === void 0 ? void 0 : north.classList.remove("stop");
             south === null || south === void 0 ? void 0 : south.classList.remove("stop");
@@ -32,6 +33,8 @@ var trafficLight = {
             west === null || west === void 0 ? void 0 : west.classList.remove("go", "caution");
             east === null || east === void 0 ? void 0 : east.classList.add("stop");
             west === null || west === void 0 ? void 0 : west.classList.add("stop");
+            car === null || car === void 0 ? void 0 : car.classList.remove('car-westbound');
+            car === null || car === void 0 ? void 0 : car.classList.add('car-northbound');
         }
         else if (this.state === "east_west_go") {
             north === null || north === void 0 ? void 0 : north.classList.remove("go", "caution");
@@ -42,18 +45,24 @@ var trafficLight = {
             west === null || west === void 0 ? void 0 : west.classList.remove("stop");
             east === null || east === void 0 ? void 0 : east.classList.add("go");
             west === null || west === void 0 ? void 0 : west.classList.add("go");
+            car === null || car === void 0 ? void 0 : car.classList.remove('car-northbound');
+            car === null || car === void 0 ? void 0 : car.classList.add('car-westbound');
         }
         else if (this.state === "north_south_caution") {
             north === null || north === void 0 ? void 0 : north.classList.remove("go");
             south === null || south === void 0 ? void 0 : south.classList.remove("go");
             north === null || north === void 0 ? void 0 : north.classList.add("caution");
             south === null || south === void 0 ? void 0 : south.classList.add("caution");
+            car === null || car === void 0 ? void 0 : car.classList.remove('car-westbound');
+            car === null || car === void 0 ? void 0 : car.classList.add('car-northbound');
         }
         else if (this.state === "east_west_caution") {
             east === null || east === void 0 ? void 0 : east.classList.remove("go");
             west === null || west === void 0 ? void 0 : west.classList.remove("go");
             east === null || east === void 0 ? void 0 : east.classList.add("caution");
             west === null || west === void 0 ? void 0 : west.classList.add("caution");
+            car === null || car === void 0 ? void 0 : car.classList.remove('car-northbound');
+            car === null || car === void 0 ? void 0 : car.classList.add('car-westbound');
         }
     }
 };
