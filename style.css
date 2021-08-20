@@ -1,0 +1,78 @@
+#intersection {
+  background-color: lightgrey;
+  border: 5px solid black;
+  width: 500px;
+  height: 500px;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.light {
+  border: 5px solid black;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.east-and-west-wrapper {
+  justify-content: space-between;
+  margin: 50px 0px;
+}
+
+.east > .light, .west > .light{
+  background-color: red;
+} 
+
+.north > .light, .south > .light {
+  background-color: green;
+}
+
+.south {
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 500px;
+}
+
+.north {
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 500px;
+}
+
+.go > .light {
+  background-color: green;
+}
+
+.stop > .light {
+  background-color: red;
+}
+
+.caution > .light {
+  background-color: orange;
+}
+
+button {
+    font-size: larger;
+    font-weight: 900;
+    background-color: white;
+    padding: 5px;
+    margin-top: 5px;
+    border: 3px solid black;
+    border-radius: 20%;
+}
+
+button:hover {
+    background-color: brightyellow;
+    border: 3px dashed black;
+}
