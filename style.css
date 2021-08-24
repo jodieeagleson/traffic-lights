@@ -69,7 +69,7 @@
 
 @keyframes car-drive-north {
   from {
-    transform: translateY(100px) rotate(180deg);
+    transform: translateY(500px) rotate(180deg);
   }
 
   to {
@@ -77,9 +77,19 @@
   }
 }
 
+@keyframes car-drive-south {
+  from {
+    transform: translateY(-500px);
+  }
+
+  to {
+    transform: translateY(500px);
+  }
+}
+
 @keyframes car-drive-west {
   from {
-    transform: translateX(100px) rotate(90deg);
+    transform: translateX(300px) rotate(90deg);
   }
 
   to {
@@ -87,7 +97,17 @@
   }
 }
 
-.car {
+@keyframes car-drive-east {
+  from {
+    transform: translateX(-500px) rotate(-90deg);
+  }
+
+  to {
+    transform: translateX(300px) rotate(-90deg);
+  }
+}
+
+.car, .car2 {
   width: 50px;
   height: 100px;
 
@@ -95,7 +115,7 @@
   background-repeat: no-repeat;
   background-size: 50px 100px;
 
-  animation-duration: 1.5s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-timing-function: linear;
@@ -109,12 +129,28 @@
   animation-name: car-drive-north;
 }
 
+.car-southbound {
+  position: absolute;
+  top: 0;
+  right: 50%;
+
+  animation-name: car-drive-south;
+}
+
 .car-westbound {
   position: absolute;
-  right: 0;
   bottom: 50%;
+  right: 0;
 
   animation-name: car-drive-west;
+}
+
+.car-eastbound {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  animation-name: car-drive-east;
 }
 
 button {
@@ -128,6 +164,5 @@ button {
 }
 
 button:hover {
-  background-color: brightyellow;
   border: 3px dashed black;
 }

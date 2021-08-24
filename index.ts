@@ -39,6 +39,7 @@ const trafficLight: TrafficLight = {
     const west = document.querySelector(".west");
 
     const car = document.querySelector('.car');
+    const car2 = document.querySelector('.car2');
 
     if (this.state === "north_south_go") {
       north?.classList.remove("stop");
@@ -51,6 +52,8 @@ const trafficLight: TrafficLight = {
       west?.classList.add("stop");
       car?.classList.remove('car-westbound');
       car?.classList.add('car-northbound');
+      car2?.classList.remove('car-eastbound');
+      car2?.classList.add('car-southbound');
     } else if (this.state === "east_west_go") {
       north?.classList.remove("go", "caution");
       south?.classList.remove("go", "caution");
@@ -62,20 +65,26 @@ const trafficLight: TrafficLight = {
       west?.classList.add("go");
       car?.classList.remove('car-northbound');
       car?.classList.add('car-westbound');
+      car2?.classList.remove('car-southbound');
+      car2?.classList.add('car-eastbound');
     } else if (this.state === "north_south_caution") {
       north?.classList.remove("go");
       south?.classList.remove("go");
       north?.classList.add("caution");
       south?.classList.add("caution");
-      car?.classList.remove('car-westbound');
-      car?.classList.add('car-northbound');
+      // car?.classList.remove('car-westbound');
+      // car?.classList.add('car-northbound');
+      // car2?.classList.remove('car-eastbound');
+      // car2?.classList.add('car-southbound');
     } else if (this.state === "east_west_caution") {
       east?.classList.remove("go");
       west?.classList.remove("go");
       east?.classList.add("caution");
       west?.classList.add("caution");
-      car?.classList.remove('car-northbound');
-      car?.classList.add('car-westbound');
+      // car?.classList.remove('car-northbound');
+      // car?.classList.add('car-westbound');
+      // car2?.classList.remove('car-southbound');
+      // car2?.classList.add('car-eastbound');
     }
   },
 };
