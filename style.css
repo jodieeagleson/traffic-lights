@@ -79,11 +79,11 @@
 
 @keyframes car-drive-south {
   from {
-    transform: translateY(-500px);
+    transform: translateY(-500px) rotate(90deg);
   }
 
   to {
-    transform: translateY(500px);
+    transform: translateY(500px) rotate(90deg);
   }
 }
 
@@ -99,26 +99,38 @@
 
 @keyframes car-drive-east {
   from {
-    transform: translateX(-500px) rotate(-90deg);
+    transform: translateX(-500px);
   }
 
   to {
-    transform: translateX(300px) rotate(-90deg);
+    transform: translateX(300px);
   }
 }
 
-.car, .car2 {
-  width: 50px;
-  height: 100px;
-
-  background-image: url("car.png");
+.car,
+.car2 {
   background-repeat: no-repeat;
-  background-size: 50px 100px;
 
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-direction: normal;
   animation-timing-function: linear;
+}
+
+.car {
+  width: 50px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  background-size: 50px 100px;
+  background-image: url("car.png");
+}
+
+.car2 {
+  width: 120px;
+  height: 70px;
+  background-size: 120px 50px;
+  background-image: url("car-white.png");
 }
 
 .car-northbound {
